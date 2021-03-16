@@ -1,0 +1,4 @@
+mixin section(sec)
+  section.sec(id=sec.id class=sec.cssClass style=(sec.bg !== undefined ? 'background-image:url(' + sec.bg + ');' : ''))
+    if block
+      block

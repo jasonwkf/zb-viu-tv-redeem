@@ -1,0 +1,34 @@
+include /_src/templates/_partials/vars.pug
+include /_src/templates/_partials/mixins.pug
+
+doctype html
+html(class='no-js ' + htmlClass)
+  head
+  meta(charset='utf-8')
+  meta(name="description", content=metaDescription)
+  meta(name="author", content=metaAuthor)
+  meta(name="keywords", content=metaKeywords)
+  meta(name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+
+  meta(property='og:title', content='' + metaTitle)
+  meta(property='og:type', content='website')
+  meta(property='og:image', content=assetsPath + 'images/common/fbshare.jpg')
+  meta(property='og:description', content=metaDescription)
+  meta(property='og:image:width', content='600')
+
+  link(rel='apple-touch-icon', sizes='128x128', href=assetsPath + 'images/common/favicon.png')
+  link(rel='icon', type='image/x-icon', sizes='32x32', href=assetsPath + 'images/common/favicon.png')
+
+  title #{metaTitle}
+  //- link(rel='stylesheet', href=assetsPath+'css/main.css')
+  style
+    include ../../scss/main.css
+
+body(style="margin: 0; padding: 0;")
+  block content
+
+
+  block fixed
+
+  block scripts
+  

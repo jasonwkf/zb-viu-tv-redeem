@@ -1,0 +1,141 @@
+// =====================================================================
+// Footer
+// =====================================================================
+
+.footer {
+  @include media-breakpoint-down(xs) {
+    .faq {
+      flex-direction: column;
+      align-content: flex-start;
+
+      .col-auto {
+        width: 100%;
+        padding-bottom: 15px;
+      }
+    }
+  }
+
+  background-color: $color-darkmode-bg;
+  padding: 30px 0;
+
+  a,
+  p {
+    @include font(16);
+  }
+
+  a {
+    color: $color-darkmode-text;
+
+    &:hover {
+      text-decoration: none;
+      opacity: 0.7;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .footer-col {
+    margin-bottom: 30px;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .footer-title {
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    div {
+      @include media-breakpoint-up(lg) {
+        padding: 0 22px 0 0;
+
+        // &:nth-child(4n) {
+        //   padding: 0 0 0 483px;
+        // }
+      }
+    }
+  }
+
+  .organised {
+    @include media-breakpoint-down(md) {
+      margin-top: 24px;
+    }
+  }
+
+  // .footer-subtitle {
+  //   @include media-breakpoint-up(lg) {
+  //     display: flex;
+  //     flex-direction: row;
+  //     justify-content: space-between;
+  //   }
+
+  //   div {
+  //     @include media-breakpoint-up(lg) {
+  //       padding: 0 22px 0 0;
+  //     }
+  //   }
+  // }
+  .footer-tag {
+    @include font(14);
+    @include font-roboto-bold;
+    margin-top: 15px;
+    @include media-breakpoint-up(md) {
+      margin-top: 27px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 27px;
+    }
+  }
+
+  .fab {
+    @include font(27);
+    margin-top: 17px;
+    @include media-breakpoint-up(lg) {
+      padding-right: 16px;
+    }
+  }
+
+  .logo {
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 6px;
+    }
+
+    img {
+      margin-top: 17px;
+      width: 100%;
+      @include media-breakpoint-down(md) {
+        max-width: 150px;
+      }
+
+      @include media-breakpoint-down(xs) {
+        max-width: 130px;
+      }
+    }
+  }
+
+  .logo-partners {
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 6px;
+    }
+
+    img {
+      margin-top: 12px;
+      padding-right: 16px;
+    }
+
+    i {
+      padding-right: 16px;
+    }
+  }
+}

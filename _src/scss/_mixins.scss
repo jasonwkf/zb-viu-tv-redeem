@@ -1,0 +1,274 @@
+// ========================================================================
+// MIXINS
+// ========================================================================
+
+// @mixin lineclamp($linenumber) {
+//   display: -webkit-box;
+//   -webkit-line-clamp: $linenumber;
+//   -webkit-box-orient: vertical;
+//   overflow: hidden;
+// }
+
+// @include hamburger(30px, 20px, 2px, $color-white);
+// @mixin hamburger($width, $height, $thickness, $linecolor) {
+//   position: relative;
+//   width: $width;
+//   height: $height;
+
+//   &[aria-expanded="true"] {
+//     > div {
+//       background-color: transparent;
+
+//       &:nth-child(1),
+//       &:nth-child(3) {
+//         top: calc(50% - #{($thickness / 2)});
+//       }
+
+//       &:nth-child(2) {
+//         &::before,
+//         &::after {
+//           transition: transform 0.2s 0.1s ease-out, background-color 0.2s 0.1s ease-out;
+//           background-color: $linecolor;
+//         }
+
+//         &::before {
+//           transform: rotate(45deg);
+//         }
+
+//         &::after {
+//           transform: rotate(-45deg);
+//         }
+//       }
+//     }
+//   }
+
+//   > div {
+//     transition: background-color 0.2s ease-out, top 0.2s ease-in;
+//     position: absolute;
+//     left: 0;
+//     background-color: $linecolor;
+//     width: 100%;
+//     height: $thickness;
+
+//     &:nth-child(1) {
+//       top: 0;
+//     }
+
+//     &:nth-child(2) {
+//       top: calc(50% - #{($thickness / 2)});
+
+//       &::before,
+//       &::after {
+//         transition: transform 0.2s ease-out, background-color 0.2s ease-out;
+//         background-color: transparent;
+//         content: '';
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         transform: rotate(0deg);
+//       }
+//     }
+
+//     &:nth-child(3) {
+//       top: calc(100% - #{$thickness});
+//     }
+//   }
+// }
+
+// @mixin footer-fix {
+//   display: flex;
+//   flex-direction: column;
+//   min-height: 100vh;
+
+//   > .main {
+//     flex: 1;
+//   }
+// }
+
+// @mixin reset-button {
+//   background: none;
+//   border: 0;
+//   padding: 0;
+//   margin: 0;
+//   outline: none;
+//   cursor: pointer;
+// }
+
+// @mixin reset-input {
+//   margin: 0;
+//   border: 0;
+//   padding: 0;
+//   display: inline-block;
+//   vertical-align: middle;
+//   white-space: normal;
+//   background: none;
+//   line-height: 1;
+// }
+
+// @mixin reset-list {
+//   padding-left: 0;
+//   margin-bottom: 0;
+//   list-style-type: none;
+// }
+
+// @mixin revert-list {
+//   display: block;
+//   list-style-type: disc;
+//   margin-top: 1em;
+//   margin-bottom: 1em;
+//   margin-left: 0;
+//   margin-right: 0;
+//   padding-left: 40px;
+
+//   > li {
+//     display: list-item;
+//   }
+// }
+
+// @include btn-cancel(20px, 100%, 1px, transparentize($color-black, 0.5));
+// @mixin btn-cancel($length, $cross-length, $cross-thickness, $cross-color) {
+//   position: relative;
+//   width: $length;
+//   height: $length;
+//   cursor: pointer;
+
+//   &::before,
+//   &::after {
+//     top: calc(50% - (#{$cross-thickness / 2}));
+//     content: '';
+//     position: absolute;
+//     left: (100 - $cross-length) / 2;
+//     width: $cross-length;
+//     height: $cross-thickness;
+//     background-color: $cross-color;
+//   }
+
+//   &::before {
+//     transform: rotate(45deg);
+//   }
+
+//   &::after {
+//     transform: rotate(-45deg);
+//   }
+// }
+
+// https://maximilianhoffmann.com/posts/better-font-rendering-on-osx
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+// @include font(21, 24, 20)
+@mixin font($sizeValue: 16, $lineHeight: null, $letterSpacing: null, $isEm: false) {
+  @if type-of($sizeValue) == 'string' {
+    font-size: $sizeValue;
+  }
+
+  @else {
+    font-size: $sizeValue + px;
+
+    @if ($isEm) {
+      font-size: em($sizeValue);
+
+      // p {
+      //   font-size: em(10); // unset compounding
+      // }
+    }
+
+    @else {
+      font-size: ($sizeValue / 10) + rem;
+    }
+  }
+
+  @if type-of($lineHeight) != null {
+    line-height: $lineHeight;
+  }
+
+  @if type-of($letterSpacing) != null {
+    letter-spacing: $letterSpacing;
+  }
+}
+
+// @include aspect-ratio(16, 9);
+// @mixin aspect-ratio($width, $height) {
+//   width: 100%;
+
+//   &::before {
+//     content: '';
+//     width: 1px;
+//     margin-left: -1px;
+//     float: left;
+//     height: 0;
+//     padding-top: ($height / $width) * 100%;
+//   }
+
+//   &::after {
+//     content: '';
+//     display: table;
+//     clear: both;
+//   }
+// }
+
+// @include loading($w: 10px, $border-w: 2px, $spd: 1.3s, $primary: red, $secondary: green);
+// @mixin loading($w: 24px, $border-w: 4px, $spd: 0.9s, $primary: darken(#ffffff, 45%), $secondary: darken(#ffffff, 25%)) {
+//   width: $w;
+//   height: $w;
+//   margin-top: -($w / 2);
+//   margin-left: -($w / 2);
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   padding: 0;
+//   border-radius: 50%;
+//   border-style: solid;
+//   border-width: $border-w;
+//   border-top-color: $primary;
+//   border-left-color: $secondary;
+//   border-bottom-color: $secondary;
+//   border-right-color: $secondary;
+//   animation: spinning $spd linear infinite;
+// }
+
+// keyframe mixin
+// @mixin keyframes($animation-name) {
+//   @-webkit-keyframes #{$animation-name} {
+//     @content;
+//   }
+
+//   @-moz-keyframes #{$animation-name} {
+//     @content;
+//   }
+
+//   @-ms-keyframes #{$animation-name} {
+//     @content;
+//   }
+
+//   @keyframes #{$animation-name} {
+//     @content;
+//   }
+// }
+
+// @mixin placeholder {
+//   &::-webkit-input-placeholder { @content; }
+//   &:-moz-placeholder { @content; }
+//   &::-moz-placeholder { @content; }
+//   &:-ms-input-placeholder { @content; }
+// }
+
+// https://css-tricks.com/snippets/sass/strip-unit-function/
+// @function strip-unit($number) {
+//   @if type-of($number) == 'number' and not unitless($number) {
+//     @return $number / ($number * 0 + 1);
+//   }
+
+//   @return $number;
+// }

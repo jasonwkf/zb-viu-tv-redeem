@@ -1,0 +1,172 @@
+// table styling
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  Margin: 0;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+table {
+  text-align: center;
+  border-collapse: collapse;
+  mso-table-lspace: 0;
+  mso-table-rspace: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+tbody {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+td,
+tr {
+  border-collapse: collapse;
+  vertical-align: top;
+  border: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+tr {
+  width: 100%;
+  height: fit-content;
+}
+
+.header {
+  Margin: 30px auto 0;
+
+  .header-container {
+    padding: 20% 0;
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+
+.content {
+  background: $color-white;
+  padding: 15px;
+
+  p {
+    @include font (14);
+    line-height: 20px;
+  }
+
+  .terms {
+    Margin-top: 20px;
+
+    h4 {
+      @include font (12);
+    }
+
+    p {
+      @include font (10);
+      line-height: 14px;
+    }
+  }
+
+  .instruction {
+    text-align: left;
+    padding: 0 15px;
+
+    img {
+      width: 48px;
+      float: left;
+      Margin-right: 20px;
+    }
+  }
+
+  .redeem-container {
+    p {
+      @include font (14);
+      line-height: 20px;
+    }
+
+    button {
+      Margin-top: 18px;
+      background: $color-viu;
+      padding: 18px;
+      border: 1px solid #cda03a;
+      border-radius: 4px;
+      @include font (18);
+      font-weight: bold;
+      color: #182d56;
+
+      &:focus {
+        outline: none;
+        background: #cda03a;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 15px  0 30px;
+
+  p {
+    @include font (10);
+    line-height: 16px;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  table {
+    width: 100%;
+  }
+
+  .header {
+    width: 100%;
+
+    .header-bottom-container {
+      width: 100%;
+    }
+  }
+
+  .content {
+    .instruction {
+      h5 {
+        @include font (15);
+      }
+
+      img {
+        float: left;
+        Margin-right: 10px;
+      }
+    }
+
+    .terms {
+      Margin-top: 20px;
+
+      h4 {
+        @include font (15);
+      }
+
+      p {
+        @include font (13);
+        line-height: 18px;
+      }
+    }
+  }
+}

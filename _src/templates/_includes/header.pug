@@ -1,0 +1,33 @@
+header.header
+  .container
+    .row.align-items-center
+      .col-12
+        a.back-to-photonico(href="https://www.photonico.asia", target="_top")
+          img(src=assetsPath + "images/logo/path.svg" alt="")
+          |  Go to Photonico
+        nav.navbar.navbar-expand-lg
+          .ham.navbar-toggle.collapsed(
+            type='button'
+            data-toggle='collapse'
+            data-target='#navbarToggler'
+            aria-expanded='false'
+          )
+            div
+            div
+            div
+          a.logo.navbar-brand(href=relativeRootPath +'?home=logo_nav')
+            img(src=assetsPath + "images/logo/photonico-contest-logo@2x.jpg" alt="")
+          .spacer
+          #navbarToggler.collapse.navbar-collapse
+            .container
+              ul.navbar-nav.row.align-items-center(style={"width":"100%", "background": "white"})
+                //- li.nav-item.col-auto
+                //-   a.nav-link(href=relativeRootPath + "about.html") About
+                li.nav-item.col-auto
+                  a.nav-link(href=relativeRootPath + "faq.html?faq=faq_home_nav") FAQ  
+                li.nav-item.col-auto
+                  a.nav-link(href=relativeRootPath + "contact.html?contact=contact_home_nav") Contact Us
+                //- li.nav-item.col-auto
+                //-   a.nav-link(href="https://www.photonico.asia") Photonico
+                li.nav-item.col-auto.ml-lg-auto
+                  a.nav-link.cta(href=relativeRootPath + "upload.html?submit=submit_home_top") Submit Entry

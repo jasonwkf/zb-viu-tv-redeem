@@ -1,0 +1,139 @@
+// =====================================================================
+// Animation
+// =====================================================================
+
+// Animation example:
+// @keyframes duration | timing-function | delay | iteration-count | direction | fill-mode | play-state | name
+// animation: 3s ease-in 1s 2 reverse both paused move-x;
+
+.transition-group-cross-fade {
+  position: relative;
+}
+
+.cross-fade-enter-active {
+  transition: opacity 0.4s 0.4s;
+}
+
+.cross-fade-leave-active {
+  transition: opacity 0.4s;
+}
+
+.cross-fade-enter {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+.cross-fade-leave-to {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-zoom-enter-active {
+  transition: opacity 0.3s $easeOutCubic, transform 0.4s $easeOutCubic;
+}
+
+.fade-zoom-leave-active {
+  transition: opacity 0.5s $easeOutCubic, transform 0.7s $easeInOutCubic;
+}
+
+.fade-zoom-enter {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.fade-zoom-leave-to {
+  opacity: 0;
+  transform: scale(0);
+}
+
+@keyframes move-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(4px); }
+}
+
+@keyframes move-y {
+  from { transform: translateY(40px); }
+  to { transform: translateY(0); }
+}
+
+@keyframes spinning {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+@keyframes placeholder-highlighting {
+  0% {
+    opacity: 1;
+  }
+
+  16% {
+    opacity: 0;
+  }
+
+  32% {
+    opacity: 1;
+  }
+
+  48% {
+    opacity: 0;
+  }
+
+  64% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out-up {
+  0% {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    visibility: hidden;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,111 @@
+// =====================================================================
+// Section
+// =====================================================================
+
+.sec {
+  h3 {
+    margin-bottom: 30px;
+  }
+
+  &.sec-padding-y {
+    // padding-top: 40px;
+    padding-bottom: 40px;
+
+    &.sec-padding-y-mobile-0 {
+      @include media-breakpoint-down(md) {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &.sec-banner {
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $color-white;
+
+    @if ($is-darkmode == false) {
+      &:not(.sec-banner-lg) {
+        background-image: none !important; // stylelint-disable-line declaration-no-important
+        color: $color-black;
+        height: auto;
+        padding: 20px 0;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    height: 100px;
+    @include media-breakpoint-up(lg) {
+      height: 160px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color-black, 0.6);
+    }
+
+    h1 {
+      margin: 0;
+
+      @include font(24);
+
+      // @include media-breakpoint-up(lg) {
+      //   @include font(40);
+      // }
+
+      @include media-breakpoint-up(sm) {
+        @include font(40);
+      }
+    }
+  }
+
+  &.sec-banner-lg {
+    height: 360px;
+
+    @include media-breakpoint-up(lg) {
+      height: 720px;
+    }
+
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+
+  &.sec-darken {
+    background-color: darken($color-darkmode-bg, $color-offset);
+
+    @if ($is-darkmode) {
+      background-color: lighten($color-darkmode-bg, $color-offset);
+    }
+  }
+
+  &.sec-partners {
+    margin-top: 60px;
+    margin-bottom: 120px;
+
+    h1 {
+      margin-bottom: 15px;
+    }
+
+    .partners-title {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      @include reset-list;
+    }
+
+    .partners-list {
+      margin-bottom: 30px;
+    }
+  }
+}

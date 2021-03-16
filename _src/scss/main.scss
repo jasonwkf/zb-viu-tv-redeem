@@ -1,0 +1,21 @@
+// =====================================================================
+// Import SCSS files
+// =====================================================================
+@import 'variables';
+@import 'mixins';
+// @import 'functions';
+@import 'typography';
+@import 'global';
+// @import 'animation';
+
+// @import 'libs/media-queries';
+
+// @import 'partials/header';
+// @import 'partials/footer';
+// @import 'partials/section';
+// @import 'partials/overlay';
+
+@import 'pages/table'
+// to overwrite styles
+
+// stylelint-disable-line declaration-no-important

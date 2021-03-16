@@ -1,0 +1,41 @@
+extends /_src/templates/_layouts/default.pug
+
+block vars
+  - var metaAuthor = 'SPH';
+  - var metaTitle = 'Viu TV Promotion';
+  - var metaKeywords = '';
+  - var metaDescription = 'One Year Free Viu Premium';
+  - var redeemcode = 'foobar'
+
+  - htmlClass += '';
+  - bodyClass += '';
+  - wrapClass += '';
+
+block content
+  table(width="600" border="0" cellpadding="0" cellspacing="0" bgcolor="#f5f5f5" align="center")
+    tr
+      td(style="-webkit-box-sizing: border-box; box-sizing: border-box; width:100%; padding: 0 15px;")
+        .header
+          .header-container(style='background-image: url("./dist/images/common/redemption-banner-large.jpg");')
+    tr
+      td(style="-webkit-box-sizing: border-box; box-sizing: border-box; width:100%; padding: 0 15px;")
+        .content
+          .instruction(style='padding-top: 25px; padding-bottom: 10px;')
+            img(src= assetsPath + 'images/icons/clickicon.png')
+            h5 Click on the button below to be redirected to the <strong>Viu redemption page</strong>
+          .redeem-container(style="background-color: #f5f5f5; margin: 15px 0; padding: 20px; text-align: center; line-height: 18px;")
+            p <strong>Dear { CRSM Name },<br/></strong> You are entitled to a <strong>Viu Premium 365 Days Plan</strong> (worth $76.61).
+            p &nbsp;
+            p Your unique redemption code is:
+            h4(style='font-size: 24px; color: #848484; padding-top: 10px') ilo78veviu9rtv
+            p(style="font-size: 10px; padding-top: 5px; font-weight: bold;") Valid till December 31, 2021
+            a(href=`https://www.viu.com/ott/sg/en-us/campaign/redeem?code=${redeemcode}`)
+              button Click to redeem
+          p Alternatively, you can head over to <a href='https://www.viu.com/ott/sg/en-us/campaign/redeem' style='color:#005daa; font-weight: bold;'>readsph.sg/viu</a> via your desktop or mobile browser, enter your redemption code, and follow the ensuing steps to log in or set up your Viu account. (For Android users only, you will be able to redeem from the Viu app. Simply click on the person icon on the top right of the screen, and select ‘Redeem Code’.)
+          P &nbsp;
+          p You may redeem this service by creating a new Viu account or logging in to your existing account. If you are already subscribed to Viu Premium prior to redeeming, please unsubscribe before activating your code.
+          .terms
+            h4 Terms and conditions: 
+            p Redemption is available on a first come first served basis and is valid for News Tablet subscribers only. Each code is unique and is valid for one redemption only. Once the code has been activated, we will not be able to amend or revert the service. For enquiries, please contact us at <a href='mailto:circs@sph.com.sg' style='color:#005daa; font-weight: bold;'>circs@sph.com.sg</a> or call in to our Customer Service Hotline at <strong style='color:#005daa; font-weight: bold;'>6388 3838</strong>.
+        .footer
+          p Copyright © 2021 Singapore Press Holdings Ltd. Co. Regn. No. 198402868E. All rights reserved. Singapore Press Holdings Limited, 1000 Toa Payoh North, News Centre, 318994, Singapore

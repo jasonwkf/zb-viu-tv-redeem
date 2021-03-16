@@ -1,0 +1,116 @@
+// =====================================================================
+// Header
+// =====================================================================
+
+$ham-w: 30px;
+
+.header {
+  background-color: $color-darkmode-bg;
+  padding: 10px 0;
+  @include media-breakpoint-up(lg) {
+    padding: 14px 0 16px 0;
+  }
+
+  .back-to-photonico {
+    text-align: right;
+    margin: 16px 0 0 0;
+    padding-right: 50px;
+    display: block;
+    height: 19px;
+    @include font;
+    color: $color-greyer;
+    width: 100%;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  .navbar-collapse {
+    background: $color-white;
+    z-index: 1000;
+  }
+
+  a {
+    color: $color-darkmode-text;
+    @include font(16);
+  }
+
+  .ham {
+    appearance: none;
+    @include hamburger($ham-w, 20px, 2px, $color-brand);
+
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+
+  .navbar {
+    padding: 0;
+    height: 73px;
+    width: 100%;
+  }
+
+  .navbar-brand {
+    margin-right: 0;
+
+    img {
+      height: 53px; //add the img height
+      @include media-breakpoint-up(lg) {
+        margin-right: 20px;
+        margin-bottom: 6px; // agaration alignment
+      }
+    }
+  }
+
+  .spacer {
+    width: $ham-w;
+
+    display: block;
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+
+  .nav-item {
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      text-align: left;
+    }
+  }
+
+  .nav-link {
+    @include font-roboto-bold;
+    text-transform: uppercase;
+    text-align: center;
+    @include media-breakpoint-up(lg) {
+      text-align: left;
+    }
+
+    &:not(.cta) {
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &.is-active {
+        color: $color-brand-secondary;
+      }
+    }
+
+    &.cta {
+      color: $color-white;
+      padding: 0 30px;
+      margin: 10px 0;
+
+      @include media-breakpoint-up(lg) {
+        padding: 0 30px;
+        margin: 0;
+      }
+
+      &.is-active { // overwrite page highlighted link style
+        background-color: $color-brand;
+      }
+    }
+  }
+}
